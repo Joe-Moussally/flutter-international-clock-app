@@ -11,5 +11,5 @@ void main() => runApp(MaterialApp(
         '/home': (context) => Home(),
         '/location': (context) => ChooseLocation()
       },
-      initialRoute: '/home',
+      initialRoute: '/',
     ));
