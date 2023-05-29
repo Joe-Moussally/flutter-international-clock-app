@@ -7,8 +7,13 @@ class WorldTime {
   String time = "";
   String flag;
   String url;
+  late bool isDay;
 
-  WorldTime({this.location = "", this.flag = "", this.url = ""});
+  WorldTime({
+    this.location = "",
+    this.flag = "",
+    this.url = "",
+  });
 
   Future<void> getTime() async {
     try {
@@ -25,6 +30,8 @@ class WorldTime {
       now = now.add(Duration(hours: int.parse(offset)));
 
       // set time property
+      // isDay = now.hour > 6 && now.hour < 20 ? true : false;
+      isDay = true;
       time = DateFormat.jm().format(now);
     } catch (e) {
       time = "Could not get time data";
